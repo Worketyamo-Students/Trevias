@@ -1,0 +1,18 @@
+services:
+  app:
+    build: .
+    ports:
+      - "4000:4000"
+    env_file: .env
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo:6.0
+    container_name: camtravel-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
