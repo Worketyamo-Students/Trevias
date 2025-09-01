@@ -29,59 +29,58 @@ backend/
 │  │
 │  ├─ modules/
 │  │  ├─ auth/               # Authentification
-│  │  │   ├─ auth.controller.ts
-│  │  │   ├─ auth.service.ts
-│  │  │   ├─ auth.routes.ts
-│  │  │   ├─ auth.validation.ts
-│  │  │   └─ auth.types.ts
+│  │  │   ├─ auth.controller.ts       # Logique des endpoints (register, login, logout, social auth)
+│  │  │   ├─ auth.service.ts          # Méthodes métiers (hash mdp, création JWT, OAuth)
+│  │  │   ├─ auth.routes.ts           # Routes /api/auth/*
+│  │  │   ├─ auth.validation.ts       # Schémas Joi/Zod pour register/login
+│  │  │   └─ auth.types.ts            # Interfaces TS (payload, token, etc.)
 │  │  │
 │  │  ├─ users/              # Gestion utilisateurs
-│  │  │   ├─ user.controller.ts
-│  │  │   ├─ user.service.ts
-│  │  │   ├─ user.routes.ts
-│  │  │   ├─ user.validation.ts
-│  │  │   └─ user.types.ts
+│  │  │   ├─ user.controller.ts       # CRUD user (profile, update, delete)
+│  │  │   ├─ user.service.ts          # Logique (db calls via Prisma)
+│  │  │   ├─ user.routes.ts           # Routes /api/users/*
+│  │  │   ├─ user.validation.ts       # Validation input
+│  │  │   └─ user.types.ts            # Interfaces utilisateur
 │  │  │
 │  │  ├─ agencies/           # CRUD agences
 │  │  │   ├─ agency.controller.ts
 │  │  │   ├─ agency.service.ts
-│  │  │   ├─ agency.routes.ts
+│  │  │   ├─ agency.routes.ts         # /api/agencies/*
 │  │  │   ├─ agency.validation.ts
 │  │  │   └─ agency.types.ts
 │  │  │
 │  │  ├─ trips/              # BusTrip + TrainTrip
-│  │  │   ├─ trip.controller.ts
+│  │  │   ├─ trip.controller.ts       # Créer un trip, voir les trips, dispo
 │  │  │   ├─ trip.service.ts
-│  │  │   ├─ trip.routes.ts
+│  │  │   ├─ trip.routes.ts           # /api/trips/*
 │  │  │   ├─ trip.validation.ts
 │  │  │   └─ trip.types.ts
 │  │  │
 │  │  ├─ bookings/           # Réservations
 │  │  │   ├─ booking.controller.ts
 │  │  │   ├─ booking.service.ts
-│  │  │   ├─ booking.routes.ts
+│  │  │   ├─ booking.routes.ts         # /api/bookings/*    
 │  │  │   ├─ booking.validation.ts
 │  │  │   └─ booking.types.ts
 │  │  │
 │  │  ├─ packages/           # Colis
 │  │  │   ├─ package.controller.ts
 │  │  │   ├─ package.service.ts
-│  │  │   ├─ package.routes.ts
+│  │  │   ├─ package.routes.ts         # /api/packages/*
 │  │  │   ├─ package.validation.ts
 │  │  │   └─ package.types.ts
 │  │  │
 │  │  ├─ payments/           # Paiement
-│  │  │   ├─ payment.controller.ts
-│  │  │   ├─ payment.service.ts
-│  │  │   ├─ payment.routes.ts
+│  │  │   ├─ payment.controller.ts     # Vérification transaction, webhook
+│  │  │   ├─ payment.service.ts 
+│  │  │   ├─ payment.routes.ts         # /api/payments/*
 │  │  │   ├─ payment.validation.ts
 │  │  │   └─ payment.types.ts
 │  │  │
 │  │  └─ notifications/      # Emails / notifications
 │  │      ├─ notification.controller.ts
-│  │      ├─ notification.service.ts
-│  │      ├─ notification.routes.ts
-│  │      ├─ notification.validation.ts
+│  │      ├─ notification.service.ts   # Envoi email, sms
+│  │      ├─ notification.routes.ts    # /api/notifications/*
 │  │      └─ notification.types.ts
 │  │
 │  ├─ utils/
