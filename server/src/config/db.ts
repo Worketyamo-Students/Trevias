@@ -1,8 +1,14 @@
 import { PrismaClient } from '@prisma/client';
 
-export enum AgencyType {
-  BUS,
-  TRAIN,
-}
+export const prisma = new PrismaClient({
+  log: process.env.NODE_ENV === "development" ? ["query", "info", "warn"] : ["warn"]
+});
 
-export const prisma = new PrismaClient;
+process.on("SIGINT", async () => {
+  await prisma.$disconnect();
+  process.exit(0);
+})
+
+
+
+
