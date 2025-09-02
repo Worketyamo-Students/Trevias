@@ -30,7 +30,7 @@ backend/
 │  ├─ modules/
 │  │  ├─ auth/               # Authentification
 │  │  │   ├─ auth.controller.ts       # Logique des endpoints (register, login, logout, social auth)
-│  │  │   ├─ auth.service.ts          # Méthodes métiers (hash mdp, création JWT, OAuth)
+│  │  │   ├─ auth.service.ts          # Méthodes métiers (hash mdp, création JWT, Auth)
 │  │  │   ├─ auth.routes.ts           # Routes /api/auth/*
 │  │  │   ├─ auth.validation.ts       # Schémas Joi/Zod pour register/login
 │  │  │   └─ auth.types.ts            # Interfaces TS (payload, token, etc.)
